@@ -23,6 +23,7 @@ app.get("/api/hello", (req, res) => {
 });
 
 app.post('/api/shorturl/:originalUrl', (req, res) => {
+    console.log('post request received');
     const originalUrl = req.params.originalUrl;
     console.log(originalUrl);
     /*
