@@ -21,10 +21,15 @@ app.get('/', (req, res) => {
 app.get("/api/hello", (req, res) => {
     res.json({ greeting: 'Hello API' });
 });
-
-app.post('/api/shorturl/:originalUrl', (req, res) => {
+/*
+app.route("/api/shorturl")
+    .post((req, res) => {
+        console.log('post received in app.route');
+    });
+*/
+app.post('/api/shorturl', (req, res) => {
     console.log('post request received');
-    const originalUrl = req.params.originalUrl;
+    const originalUrl = req.body.url;
     console.log(originalUrl);
     /*
     const shortUrl = Math.floor(Math.random() * 1000000);
